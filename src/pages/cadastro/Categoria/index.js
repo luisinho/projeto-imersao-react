@@ -32,7 +32,10 @@ function CadastroCategoria() {
     }
 
     useEffect(() => {
-      const URL_TOP = 'http://localhost:8081/categorias';
+      const URL_TOP = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8081/categorias'
+      : 'https://projeto-imersao-react.herokuapp.com/categorias';
+      console.log('aaa', URL_TOP);
       /*fetch(URL_TOP)
       .then((respostaDoServidor) => { 
           return respostaDoServidor.json(); 
